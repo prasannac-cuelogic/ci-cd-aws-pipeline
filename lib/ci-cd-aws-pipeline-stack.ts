@@ -16,7 +16,7 @@ export class CiCdAwsPipelineStack extends cdk.Stack {
     new CodePipeline(this, 'Pipeline', {
       pipelineName: 'TestPipeline',
       synth: new ShellStep('synth', {
-        input: CodePipelineSource.gitHub('prasannac-cuelogic/ci-cd-aws-pipeline', 'main'),
+        input: CodePipelineSource.gitHub('prasannac-cuelogic/ci-cd-aws-pipeline', 'master'),
         commands: ['npm ci',
                    'npm run build',
                    'npx cdk synth']
